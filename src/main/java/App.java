@@ -33,7 +33,7 @@ class Car extends Vehicle{
         if (speed <= 200){
             System.out.println("Name: " + this.name + ", Brand: " + this.brand + ", speed up to "+ speed + "km/hr.");
         } else{
-            System.out.println("Speed up failed!");
+            System.out.println("Name: " + this.name + ", Brand: " + this.brand + ", speed up failed!");
         }
     }
 }
