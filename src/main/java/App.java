@@ -14,14 +14,34 @@ public class App {
         vehicle1.speedUp(30);
         vehicle2.speedUp(50);
 
+        Car car = new Car("My Car", "Goodby");
+        car.speedUp(180);
+        car.speedUp(201);
+
         System.out.println(new App().getGreeting());
+    }
+}
+
+class Car extends Vehicle{
+
+    Car(String name, String brand) {
+        super(name, brand);
+    }
+
+    @Override
+    public void speedUp(int speed) {
+        if (speed <= 200){
+            System.out.println("Name: " + this.name + ", Brand: " + this.brand + ", speed up to "+ speed + "km/hr.");
+        } else{
+            System.out.println("Speed up failed!");
+        }
     }
 }
 
 class Vehicle{
 
-    private String name;
-    private String brand;
+    String name;
+    String brand;
 
     Vehicle(String name, String brand){
         this.name = name;
