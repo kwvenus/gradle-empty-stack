@@ -18,8 +18,50 @@ public class App {
         car.speedUp(180);
         car.speedUp(201);
 
+        Vehicle bus = new Bus("My Bus", "OOCL");
+        bus.speedUp(70);
+        bus.speedUp(100);
+
+        Driver tommy = new Driver(vehicle1, "Tommy");
+        tommy.speedUp(50);
+
+        Driver jacky = new Driver(car, "Jacky");
+        jacky.speedUp(111);
+
+        Driver baby = new Driver(bus, "Baby");
+        baby.speedUp(666);
+
         System.out.println(new App().getGreeting());
     }
+}
+
+class  Driver {
+    private final Vehicle vehicle;
+    private final  String name;
+
+    public Driver(Vehicle vehicle, String name){
+        this.vehicle = vehicle;
+        this.name = name;
+    }
+
+    public void speedUp(int speed){
+        System.out.println("Driver: " + this.name);
+        this.vehicle.speedUp(speed);
+    }
+}
+
+class Bus extends Vehicle{
+
+    Bus(String name, String brand) {
+        super(name, brand);
+    }
+
+    @Override
+    public void speedUp(int speed) {
+        System.out.println("___I am bus___");
+        super.speedUp(speed);
+    }
+
 }
 
 class Car extends Vehicle{
